@@ -1,0 +1,158 @@
+.checkout-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+.checkout-form-container {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-form-container h2 {
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #333;
+}
+
+.checkout-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.checkout-form .form-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.checkout-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+.checkout-form input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.checkout-form input:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+.checkout-form input.error,
+.checkout-form select.error {
+    border-color: #dc2626;
+}
+
+.checkout-form select {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: white;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.checkout-form select:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+.expiry-inputs {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.expiry-inputs select {
+    flex: 1;
+}
+
+.error-message {
+    display: block;
+    color: #dc2626;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.checkout-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.pay-button,
+.cancel-button {
+    flex: 1;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.pay-button {
+    background-color: #4CAF50;
+    color: white;
+    transition: background-color 0.2s;
+}
+
+.pay-button:hover:not(:disabled) {
+    background-color: #45a049;
+}
+
+.pay-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.cancel-button {
+    background-color: #f5f5f5;
+    color: #666;
+    transition: background-color 0.2s;
+}
+
+.cancel-button:hover {
+    background-color: #e5e5e5;
+}
+
+.lock-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+/* Success Page Styles */
+.success-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.success-content {
+    text-align: center;
+}
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+    color: #4CAF50;
+    margin-bottom: 1rem;
+}
+
+.success-content h2 {
+    color: #333;
+    font-size: 1.5rem;
+}

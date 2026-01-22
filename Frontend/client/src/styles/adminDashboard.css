@@ -1,0 +1,602 @@
+/* Admin Dashboard - Panel de Administración */
+
+.admin-dash-wrap {
+    max-width: 95%;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.admin-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.admin-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+}
+
+.admin-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* Tabs de navegación */
+.admin-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #e0e0e0;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+}
+
+.admin-tab-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    background: transparent;
+    color: #666;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 8px 8px 0 0;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.admin-tab-btn:hover {
+    background: #f5f5f5;
+    color: #333;
+}
+
+.admin-tab-btn.is-active {
+    background: #007bff;
+    color: white;
+}
+
+.tab-icon {
+    font-size: 1.2rem;
+}
+
+.tab-label {
+    font-weight: 600;
+}
+
+/* Panel principal */
+.admin-panel {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+.panel-section {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.section-title h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 0.25rem;
+}
+
+.section-title p {
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.btn-primary-admin {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-primary-admin:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+/* ============================================ */
+/* USERS LIST STYLES */
+/* ============================================ */
+
+.users-list-container {
+    animation: fadeIn 0.3s ease;
+}
+
+.users-stats {
+    background: #007bff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    color: white;
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 2rem;
+}
+
+.users-stats p {
+    font-size: 1.1rem;
+}
+
+.users-stats strong {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.users-table-wrapper {
+    overflow-x: auto;
+    margin-bottom: 2rem;
+}
+
+.users-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.users-table thead {
+    background: #f8f9fa;
+}
+
+.users-table th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: #495057;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.users-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.users-table tbody tr:hover {
+    background: #f8f9fa;
+}
+
+.username-cell {
+    font-weight: 600;
+    color: #007bff;
+}
+
+.direccion-cell {
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.rol-badge {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.rol-admin {
+    background: #dc3545;
+    color: white;
+}
+
+.rol-vendedor {
+    background: #ffc107;
+    color: #000;
+}
+
+.rol-comprador {
+    background: #28a745;
+    color: white;
+}
+
+.actions-cell {
+    text-align: center;
+}
+
+.btn-action {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.85rem;
+}
+
+.btn-promote {
+    background: #28a745;
+    color: white;
+}
+
+.btn-promote:hover:not(:disabled) {
+    background: #218838;
+    transform: translateY(-2px);
+}
+
+.btn-demote {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-demote:hover:not(:disabled) {
+    background: #c82333;
+    transform: translateY(-2px);
+}
+
+.btn-action:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.no-action {
+    color: #999;
+    font-style: italic;
+}
+
+/* ============================================ */
+/* ADMIN ORDERS LIST STYLES */
+/* ============================================ */
+
+.admin-orders-container {
+    animation: fadeIn 0.3s ease;
+}
+
+.orders-stats {
+    background: #007bff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    color: white;
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 2rem;
+}
+
+.orders-stats p {
+    font-size: 1.1rem;
+}
+
+.orders-stats strong {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.order-card-admin {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.2s ease;
+}
+
+.order-card-admin:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.order-header-admin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    cursor: pointer;
+    background: #f8f9fa;
+}
+
+.order-header-admin:hover {
+    background: #e9ecef;
+}
+
+.order-info h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #007bff;
+    margin-bottom: 0.5rem;
+}
+
+.order-date {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.order-user {
+    color: #495057;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.order-summary {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.estado-badge {
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.estado-completada {
+    background: #28a745;
+    color: white;
+}
+
+.estado-pendiente {
+    background: #ffc107;
+    color: #000;
+}
+
+.estado-cancelada {
+    background: #dc3545;
+    color: white;
+}
+
+.order-total {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #28a745;
+}
+
+.order-items-count {
+    background: #007bff;
+    color: white;
+    padding: 0.3rem 0.7rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.expand-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    color: #666;
+}
+
+.order-items-admin {
+    padding: 1.5rem;
+    background: white;
+    border-top: 1px solid #e0e0e0;
+}
+
+.order-items-admin h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #495057;
+}
+
+.items-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.items-table thead {
+    background: #f8f9fa;
+}
+
+.items-table th {
+    padding: 0.75rem;
+    text-align: left;
+    font-weight: 600;
+    color: #495057;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.items-table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.item-title {
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.item-id {
+    display: block;
+    font-size: 0.8rem;
+    color: #999;
+    font-weight: normal;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.descuento-aplicado {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+.sin-descuento {
+    color: #999;
+}
+
+.subtotal-cell {
+    font-weight: 600;
+    text-align: right;
+}
+
+.items-table tfoot {
+    background: #f8f9fa;
+}
+
+.total-row td {
+    padding: 1rem 0.75rem;
+    border-top: 2px solid #dee2e6;
+}
+
+.total-cell {
+    font-size: 1.2rem;
+    color: #28a745;
+    text-align: right;
+}
+
+/* ============================================ */
+/* PAGINATION */
+/* ============================================ */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0e0e0;
+}
+
+.pagination-btn {
+    padding: 0.6rem 1.2rem;
+    border: 1px solid #007bff;
+    background: white;
+    color: #007bff;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.pagination-btn:hover:not(:disabled) {
+    background: #007bff;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.pagination-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pagination-info {
+    font-weight: 600;
+    color: #495057;
+}
+
+/* ============================================ */
+/* LOADING STATE */
+/* ============================================ */
+
+.loading-state {
+    text-align: center;
+    padding: 3rem;
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* ============================================ */
+/* RESPONSIVE */
+/* ============================================ */
+
+@media (max-width: 768px) {
+    .admin-dash-wrap {
+        padding: 0 1rem;
+    }
+
+    .admin-header h1 {
+        font-size: 2rem;
+    }
+
+    .admin-tabs {
+        gap: 0.25rem;
+    }
+
+    .admin-tab-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .tab-label {
+        display: none;
+    }
+
+    .tab-icon {
+        font-size: 1.5rem;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .users-stats,
+    .orders-stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .users-table,
+    .items-table {
+        font-size: 0.85rem;
+    }
+
+    .users-table th,
+    .users-table td,
+    .items-table th,
+    .items-table td {
+        padding: 0.5rem;
+    }
+
+    .order-header-admin {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .order-summary {
+        width: 100%;
+        justify-content: space-between;
+    }
+}

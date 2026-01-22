@@ -1,0 +1,14 @@
+#root {
+  margin: 0;
+  padding: 0;
+  max-width: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* El contenido principal debe poder crecer */
+#root> :not(nav):not(footer) {
+  flex: 1 0 auto;
+  width: 100%;
+}
